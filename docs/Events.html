@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="eg">
+  <head>
+    <title>Events | XFIT</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/events-faq.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire-animation">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </head>
+
+  <body onload="onload('Events')">
+    <div id="scrollBar"></div>
+
+    <audio autoplay loop>
+      <source src="../../img/Audio.mp3" type="audio/mp3">
+    </audio>
+
+    <header> <!-- Header -->
+      <div style="display: flex;align-items: center;">
+        <h1 id="headerLogo">XFIT</h1>
+        
+      </div>
+
+      <nav>
+          <ul id="headerMenu">
+              <span><li><a class="mainLink" href="index.html">Home</a></li></span>
+              <span><li><a class="mainLink" href="blog.html">Blog</a></li></span>
+              <li id="headerMenu1">
+                <span>
+                  <a id="active" href="#">Events</a>
+                  <img id="SMI1" class="subMenuIcon" src="../img/show_more.png">
+                </span>
+                <img id="subMenuIcon2-1" src="../img/bleach.png">
+                <ul id="subMenu1">
+                  <li><a id="activeOption" href="Events.html">Events</a></li>
+                  <li><a href="#">Survey</a></li>
+                </ul>
+              </li>
+              <li id="headerMenu2">
+                <span>
+                  <a href="#">Services</a>
+                  <img id="SMI2" class="subMenuIcon" src="../img/show_more.png">
+                </span>
+                <img id="subMenuIcon2-2" src="../img/bleach.png">
+                <ul id="subMenu2">
+                  <li><a href="store.html">Store</a></li>
+                  <li><a href="membership.html">Membership</a></li>
+                  <li><a href="classes.html">Classes</a></li>
+                  <li><a href="donation.html">Donation</a></li>
+                  <li><a href="facilities.html">Facility</a></li>
+                </ul>
+              </li>
+               <li id="headerMenu3">
+                <span>
+                  <a href="#">About</a>
+                  <img id="SMI3" class="subMenuIcon" src="../img/show_more.png">
+                </span>
+                <img id="subMenuIcon2-3" src="../img/bleach.png">
+                <ul id="subMenu3">
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Partners</a></li>
+                  <li><a href="#">Trainers</a></li>
+                  <li><a href="FAQ.html">FAQs</a></li>
+                </ul>
+              </li>
+              <li><a class="mainLink" href="contact.html">Contact Us</a></li>
+          </ul>
+      </nav>
+      <div>
+        <div id="searchContainer">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+          <input id="searchText" placeholder="Search" type="search" class="input" onkeypress="handleKeyPress(event)">
+        </div>
+        <label class="theme-switch">
+            <input id="dark-lightCheckbox"
+              type="checkbox"
+              class="theme-switch__checkbox"
+              onclick="dark('Events')"
+            />
+            <div class="theme-switch__container">
+              <div class="theme-switch__clouds"></div>
+              <div class="theme-switch__stars-container">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 144 55"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M135.831 3.00688C135.055 3.85027 134.111 4.29946 133 4.35447C134.111 4.40947 135.055 4.85867 135.831 5.71123C136.607 6.55462 136.996 7.56303 136.996 8.72727C136.996 7.95722 137.172 7.25134 137.525 6.59129C137.886 5.93124 138.372 5.39954 138.98 5.00535C139.598 4.60199 140.268 4.39114 141 4.35447C139.88 4.2903 138.936 3.85027 138.16 3.00688C137.384 2.16348 136.996 1.16425 136.996 0C136.996 1.16425 136.607 2.16348 135.831 3.00688ZM31 23.3545C32.1114 23.2995 33.0551 22.8503 33.8313 22.0069C34.6075 21.1635 34.9956 20.1642 34.9956 19C34.9956 20.1642 35.3837 21.1635 36.1599 22.0069C36.9361 22.8503 37.8798 23.2903 39 23.3545C38.2679 23.3911 37.5976 23.602 36.9802 24.0053C36.3716 24.3995 35.8864 24.9312 35.5248 25.5913C35.172 26.2513 34.9956 26.9572 34.9956 27.7273C34.9956 26.563 34.6075 25.5546 33.8313 24.7112C33.0551 23.8587 32.1114 23.4095 31 23.3545ZM0 36.3545C1.11136 36.2995 2.05513 35.8503 2.83131 35.0069C3.6075 34.1635 3.99559 33.1642 3.99559 32C3.99559 33.1642 4.38368 34.1635 5.15987 35.0069C5.93605 35.8503 6.87982 36.2903 8 36.3545C7.26792 36.3911 6.59757 36.602 5.98015 37.0053C5.37155 37.3995 4.88644 37.9312 4.52481 38.5913C4.172 39.2513 3.99559 39.9572 3.99559 40.7273C3.99559 39.563 3.6075 38.5546 2.83131 37.7112C2.05513 36.8587 1.11136 36.4095 0 36.3545ZM56.8313 24.0069C56.0551 24.8503 55.1114 25.2995 54 25.3545C55.1114 25.4095 56.0551 25.8587 56.8313 26.7112C57.6075 27.5546 57.9956 28.563 57.9956 29.7273C57.9956 28.9572 58.172 28.2513 58.5248 27.5913C58.8864 26.9312 59.3716 26.3995 59.9802 26.0053C60.5976 25.602 61.2679 25.3911 62 25.3545C60.8798 25.2903 59.9361 24.8503 59.1599 24.0069C58.3837 23.1635 57.9956 22.1642 57.9956 21C57.9956 22.1642 57.6075 23.1635 56.8313 24.0069ZM81 25.3545C82.1114 25.2995 83.0551 24.8503 83.8313 24.0069C84.6075 23.1635 84.9956 22.1642 84.9956 21C84.9956 22.1642 85.3837 23.1635 86.1599 24.0069C86.9361 24.8503 87.8798 25.2903 89 25.3545C88.2679 25.3911 87.5976 25.602 86.9802 26.0053C86.3716 26.3995 85.8864 26.9312 85.5248 27.5913C85.172 28.2513 84.9956 28.9572 84.9956 29.7273C84.9956 28.563 84.6075 27.5546 83.8313 26.7112C83.0551 25.8587 82.1114 25.4095 81 25.3545ZM136 36.3545C137.111 36.2995 138.055 35.8503 138.831 35.0069C139.607 34.1635 139.996 33.1642 139.996 32C139.996 33.1642 140.384 34.1635 141.16 35.0069C141.936 35.8503 142.88 36.2903 144 36.3545C143.268 36.3911 142.598 36.602 141.98 37.0053C141.372 37.3995 140.886 37.9312 140.525 38.5913C140.172 39.2513 139.996 39.9572 139.996 40.7273C139.996 39.563 139.607 38.5546 138.831 37.7112C138.055 36.8587 137.111 36.4095 136 36.3545ZM101.831 49.0069C101.055 49.8503 100.111 50.2995 99 50.3545C100.111 50.4095 101.055 50.8587 101.831 51.7112C102.607 52.5546 102.996 53.563 102.996 54.7273C102.996 53.9572 103.172 53.2513 103.525 52.5913C103.886 51.9312 104.372 51.3995 104.98 51.0053C105.598 50.602 106.268 50.3911 107 50.3545C105.88 50.2903 104.936 49.8503 104.16 49.0069C103.384 48.1635 102.996 47.1642 102.996 46C102.996 47.1642 102.607 48.1635 101.831 49.0069Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+              <div class="theme-switch__circle-container">
+                <div class="theme-switch__sun-moon-container">
+                  <div class="theme-switch__moon">
+                    <div class="theme-switch__spot"></div>
+                    <div class="theme-switch__spot"></div>
+                    <div class="theme-switch__spot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </label>   
+      </div>
+    </header>
+
+    <section id="topSectionEvents"> <!-- Top Section -->
+      <h1 class="webTitle"><span>X</span>FIT</h1>
+      <h1 id="topSectionEvents-title">Upcoming Events</h1>
+    </section>
+
+    <section id="mainSectionEvents-navBar"> <!-- Navigation Bar -->
+      <h1 id="navBar-title">Upcoming Events</h1>
+      <div id="navBar-filtersBox">
+        <span id="navBar-favourites" onclick="filterFavourites()" title="Show / Hide Favourites"><h1>Favourites</h1></span>
+        <ul>
+          <li id="filterBox-calendar">
+            <span>‎</span>
+            <span id="filterBox-calendarViewer" ><img id="calendarViewer-icon" src="../img/Calendar (white).png"></span>
+            <ul id="calendar-dropDown"> 
+              <span><li><img id="navLeft-btn" src="../img/left-arrow.png" onclick="nav('left')"></li></span> 
+              <li><a id="monthName">All</a></li>
+              <span><li><img id="navRight-btn" src="../img/right-arrow.png" onclick="nav('right')"></li></span>
+            </ul>
+            <span>‎</span>
+          </li>
+        </ul>
+      <ul>
+        <li id="filterBox-campus">
+          <span>‎</span>
+          <span id="filterBox-campusViewer"><h1 id="campusViewer-btn">Campus</h1><img id="campusViewer-icon" src="../img/show_more (white).png"></span>
+          <ul id="campus-dropDown"> 
+            <span><li><a id="dropDown-all" onclick="show_All_Options()" style="color: #ff4500;">Campus</a></li></span>
+            <span><li><a id="dropDown-NC" onclick="show_NC_Options()">New Cairo</a></li></span>
+            <span><li><a id="dropDown-DT" onclick="show_DT_Options()">Down Town</a></li></span>
+            <span><li><a id="dropDown-NAC" onclick="show_NAC_Options()">NAC</a></li></span>
+          </ul>
+          <span>‎</span>
+        </li>
+        </ul>
+        </div>
+    </section>
+
+    <section id="mainSectionEvents-content"> <!-- Content -->
+      <div id="popup-massage-tick"> <!-- popup -->
+        <img id="popup-massage-img" src="../img/Tick.png">
+        <h4>Added to your favourites</h4>
+      </div>
+      <div id="popup-massage-cross"><!-- popup -->
+        <img id="popup-massage-img" src="../img/Cross.png">
+        <h4>Removed from your favourites</h4>
+      </div>
+      <div id="content-container1" class="content-container NC May 2024">       <!-- Event 1 -->
+          <img class="container-images" src="../img/Event 1.jpg">
+          <div class="container-info">
+            <div class="info-group1">
+              <h1 class="container-title">Nutrition Workshop</h1>
+              <div class="con-like"> <!-- like button (copied) -->
+                <input class="like" type="checkbox" title="like" id="likeBtn1" onclick="favourite(1)">
+                <div class="checkmark">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                    <polygon class="poly" points="10,10 20,20"></polygon>
+                    <polygon class="poly" points="10,50 20,50"></polygon>
+                    <polygon class="poly" points="20,80 30,70"></polygon>
+                    <polygon class="poly" points="90,10 80,20"></polygon>
+                    <polygon class="poly" points="90,50 80,50"></polygon>
+                    <polygon class="poly" points="80,80 70,70"></polygon>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img class="container-icons" src="../img/Calendar.png">
+              <h5 class="container-data">May 15</h5>
+            </div>
+            <div>
+              <img class="container-icons" src="../img/clock.png">
+              <h5 class="container-data">10:00 am</h5>
+            </div>
+            <div>
+              <img class="container-icons" src="../img/pin.png">
+              <h5 class="container-data">XFIT New Cairo</h5>
+            </div>
+            <p class="container-description">
+              Join us for an engaging and informative Nutrition Workshop designed to help you optimize your health and fitness journey. 
+            </p>
+            <button class="read-more"> <!-- read-more button (copied) -->
+              <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+              </span>
+              <span class="button-text">Read More</span>
+            </button>
+          </div>
+      </div>  
+      <!----------------------------------------------------------------------->
+      <div id="content-container2" class="content-container DT May 2024">       <!-- Event 2  -->
+        <img class="container-images" src="../img/Event 2.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">Fit For Charity</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn2" onclick="favourite(2)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">May 16 - May 19</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">8:00 am</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT Down Town</h5>
+          </div>
+          <p class="container-description">
+            Join us for our Charity Workout Event, where every rep counts towards supporting a worthy cause!
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div>  
+      <!----------------------------------------------------------------------->
+      <div id="content-container3" class="content-container NAC June 2024">     <!-- Event 3  -->
+        <img class="container-images" src="../img/Event 3.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">NAC Tournament</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn3" onclick="favourite(3)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">june 6 - june 15</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">5:00 pm</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT New Administrative Capital</h5>
+          </div>
+          <p class="container-description">
+            Compete in our Sports Tournaments for a chance to showcase your skills and win exciting prizes!
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div>          
+      <!----------------------------------------------------------------------->
+      <div id="content-container4" class="content-container NC June 2024">      <!-- Event 4  -->
+        <img class="container-images" src="../img/Event 4.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">supplements Event</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn4" onclick="favourite(4)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">june 18</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">11:00 am</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT New Cairo</h5>
+          </div>
+          <p class="container-description">
+            Discover the latest in gym supplements at our exclusive event, designed to enhance your fitness journey and optimize your performance. 
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div>
+      <!----------------------------------------------------------------------->
+      <div id="content-container5" class="content-container NAC June 2024">     <!-- Event 5  -->
+        <img class="container-images" src="../img/Event 5.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">Run For Nature</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn5" onclick="favourite(5)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">June 19 - June 27</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">11:00 am</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT New Administrative Capital</h5>
+          </div>
+          <p class="container-description">
+            Join our 'Run for Nature' event to sweat for a cause and support environmental conservation with every stride!"
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div> 
+      <!----------------------------------------------------------------------->
+      <div id="content-container6" class="content-container DT June 2024">      <!-- Event 6  -->
+        <img class="container-images" src="../img/Event 6.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">FitFuel</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn6" onclick="favourite(6)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">June 20</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">8:00 am</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT Down Town</h5>
+          </div>
+          <p class="container-description">
+            Join us for an exclusive cooking class with nutritionists and chefs, focusing on healthy eating and meal prep to support your fitness journey!
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div> 
+      <!----------------------------------------------------------------------->
+      <div id="content-container7" class="content-container NAC July 2024">     <!-- Event 7  -->
+        <img class="container-images" src="../img/Event 7.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">Family Fitness Day</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn7" onclick="favourite(7)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">July 3 - July 18</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">11:00 am</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT New Administrative Capital</h5>
+          </div>
+          <p class="container-description">
+            Join us for Family Fitness Fun Day, where we'll have activities for all ages, from kids' workouts to family-friendly challenges, promoting health!
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div> 
+      <!----------------------------------------------------------------------->
+      <div id="content-container8" class="content-container NC July 2024">      <!-- Event 8  -->
+        <img class="container-images" src="../img/Event 8.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">Season Champions</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn8" onclick="favourite(8)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">july 14 - July 26</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">9:00 pm</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT New Cairo</h5>
+          </div>
+          <p class="container-description">
+            Celebrate our top members of the season with an exclusive VIP event featuring special workouts, prizes, and recognition for their dedication!
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div> 
+      <!----------------------------------------------------------------------->
+      <div id="content-container9" class="content-container NAC August 2024">   <!-- Event 9  -->
+        <img class="container-images" src="../img/Event 9.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">Yoga Retreat</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn9" onclick="favourite(9)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">August 10 - August 15</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">7:00 am</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT New Administrative Capital</h5>
+          </div>
+          <p class="container-description">
+            Immerse yourself in a rejuvenating yoga retreat nestled in the serene mountains. Enjoy daily yoga sessions, meditation, and relaxation.
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div> 
+      <!----------------------------------------------------------------------->
+      <div id="content-container10" class="content-container DT September 2024"> <!-- Event 10  -->
+        <img class="container-images" src="../img/Event 10.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">Marathon</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn10" onclick="favourite(10)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">September 5</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">6:00 am</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT Down Town</h5>
+          </div>
+          <p class="container-description">
+            Lace up your running shoes and join us for a marathon supporting local charities and community causes. Run for a purpose!
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div>
+      <!----------------------------------------------------------------------->
+      <div id="content-container11" class="content-container DT October 2024">   <!-- Event 11  -->
+        <img class="container-images" src="../img/Event 11.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">Outdoor Yoga</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn11" onclick="favourite(11)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">October 9</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">9:00 am</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT Down Town</h5>
+          </div>
+          <p class="container-description">
+            Enjoy the fresh air and beautiful surroundings as you practice yoga outdoors in the park. Suitable for all levels, bring your mat and join us!
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div>
+      <!----------------------------------------------------------------------->
+      <div id="content-container12" class="content-container NAC October 2024">  <!-- Event 12  -->
+        <img class="container-images" src="../img/Event 12.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">Meditation Retreat</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn12" onclick="favourite(12)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">October 16 - October 18</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">8:00 am - 5:00 pm</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT New Administrative Capital</h5>
+          </div>
+          <p class="container-description">
+            Escape the hustle and bustle of daily life and immerse yourself in a weekend of mindfulness meditation at our serene retreat center.
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div>
+      <!----------------------------------------------------------------------->
+      <div id="content-container13" class="content-container DT December 2024">  <!-- Event 13  -->
+        <img class="container-images" src="../img/Event 13.jpg">
+        <div class="container-info">
+          <div class="info-group1">
+            <h1 class="container-title">Fitness Holiday</h1>
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like" id="likeBtn13" onclick="favourite(13)">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" class="celebrate">
+                  <polygon class="poly" points="10,10 20,20"></polygon>
+                  <polygon class="poly" points="10,50 20,50"></polygon>
+                  <polygon class="poly" points="20,80 30,70"></polygon>
+                  <polygon class="poly" points="90,10 80,20"></polygon>
+                  <polygon class="poly" points="90,50 80,50"></polygon>
+                  <polygon class="poly" points="80,80 70,70"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/Calendar.png">
+            <h5 class="container-data">December 15 - December 20</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/clock.png">
+            <h5 class="container-data">6:00 am - 7:30 am</h5>
+          </div>
+          <div>
+            <img class="container-icons" src="../img/pin.png">
+            <h5 class="container-data">XFIT Down Town</h5>
+          </div>
+          <p class="container-description">
+            Stay fit during the holiday season with our intense bootcamp sessions. Burn off those holiday calories and stay motivated with our expert trainers!
+          </p>
+          <button class="read-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Read More</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="pastEventsSection"> <!-- Past Events Section -->
+      <img src="../img/Table2.jpeg" id="table">
+      <h1 id="pastEvents-title"><Span class="font-effect-fire-animation">Highlights</Span> of our past events </h1>
+      <img id="tvFrame" src="../img/TV.png">
+      <iframe src="iframe.html" width="300" height="200px" frameborder="0"></iframe>
+      <img id="frame" src="../img/Frame's strings.png">
+      <img id="frame2" src="../img/Frame's strings.png">
+      <img id="frame2Img" src="../img/iframe 6.jpg">
+      <video id="video" autoplay loop>
+        <source src="../MEDIA/Video.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section> <!-- Feedback Section -->
+      <div id="feedbackIcon-container">
+        <img id="feedbackIcon" src="../img/chat.png" title="Feedback" onclick="feedback()">
+      </div>
+      <div id="feedbackForm-container">
+        <span id="feedbackForm-containerTitle">
+          <h5>Team XFIT</h5>
+          <h6>We typically reply in a few minutes</h6>
+        </span>
+        <span id="feedbackForm-chat">
+          <h1>XFIT </h1>
+          <p>Have questions about XFIT? Our Support Team is available Monday - Friday, 9am - 6pm ET. Tell us how we can help, and we will reply as soon as we can!</p>
+        </span>
+        <span id="feedbackForm-massage">
+          <input id="sendMassage" type="text" placeholder="Write a massage">
+          <img id="sendMassage-icon" src="../img/Send.png" title="Send" href="#">
+        </span>
+      </div>
+    </section>
+
+    <footer> <!-- Footer -->
+      <div id="footerInfo">
+        <h1><span>X</span>FIT</h1>
+        <p>
+          XFIT is Egypt's premier fitness center, offering state-of-the-art
+          equipment and personalized training services. With a diverse range of
+          options including cardio, strength training, and group classes, XFIT
+          caters to all fitness levels. Experienced trainers provide tailored
+          workout plans, fostering a supportive community atmosphere. Whether
+          you're a beginner or a seasoned athlete, XFIT is dedicated to helping
+          you achieve your fitness goals in a vibrant and inclusive environment.
+        </p>
+      </div>
+
+      <div>
+        <h5>Our Services</h5>
+        <a>About Us</a>
+        <a>Our Events</a>
+        <a>pricing</a>
+        <a>Health Center</a>
+        <a>Login</a>
+      </div>
+
+      <div>
+        <h5>Company</h5>
+        <a>Terms Of Use</a>
+        <a>Contact Us</a>
+        <a>Privacy Policy</a>
+      </div>
+
+      <div>
+        <h5>Follow Us</h5>
+        <a>Facebook</a>
+        <a>Twitter</a>
+        <a>Instagram</a>
+        <a>LinkedIn</a>        
+      </div>
+    </footer>
+
+    <script src="../js/events-faq.js"></script>
+  </body>
+</html>
