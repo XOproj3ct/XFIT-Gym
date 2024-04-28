@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<!-- FONT -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Graduate&family=Open+Sans:ital,wght@0,500;1,500&family=Roboto:wght@400;500;700;900&family=Varela+Round&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- css Libs -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+        <link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+			integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="../css/classes.css" />
+        <link rel="stylesheet" href="../css/scrollbar.css">
+
+		<!-- Scripts -->
+		<script src="../js/header.js" defer></script>
+		<script src="../js/footer.js" defer></script>
+        <script src="../js/classes.js" defer></script>
+		<!-- JS libs -->
+		<link
+			href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+			rel="stylesheet"
+		/>
+		<title>Classes</title>
+	</head>
+	<body>
+        <header id="header" style="position: sticky;"></header>
+        
+		<div class="title">
+			<div>
+				<h1>Classes</h1>
+			</div>
+		</div>
+		
+		<main>
+		    <div class="container">
+                <div class="row">
+                    <div class="class-card col-lg col-md" >
+                        <div>
+                            <div class="card-head">
+                                <i class="fa-solid fa-dumbbell"></i>
+                                <h2>Normal</h2>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Full-body workout</li>
+                                    <li>Cardiovascular exercises</li>
+                                    <li>Strength training</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn"><a href="membership.html">Subscripe</a></div>
+                    </div>
+                    <div class="class-card col-lg col-md"  >
+                        
+                        <div>
+                            <div class="card-head">
+                                <i class="fa-solid fa-explosion"></i>
+                                <h2>Superman</h2>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Full-body workout</li>
+                                    <li>Cardiovascular exercises</li>
+                                    <li>Strength training</li>
+                                    <li>Progress tracking</li>
+                                    <li>Variety of equipment</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="btn"><a href="membership.html">Subscripe</a></div>
+                    
+                    </div>
+                    <div class="class-card col-lg col-md" >
+                        <div>
+                            <div class="card-head">
+                                <i class="fa-solid fa-bolt"></i>
+                                <h2>Hulk</h2>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Full-body workout</li>
+                                    <li>Cardiovascular exercises</li>
+                                    <li>Strength training</li>
+                                    <li>Variety of equipment</li>
+                                    <li>Progress tracking</li>
+                                    <li>Goal-oriented workouts</li>
+                                    <li>Certified instructors</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn"><a href="membership.html">Subscripe</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="audio">
+                <audio controls>
+                    <source src="../MEDIA/We have Normal class sup 3.wav" type="audio/mpeg">
+                </audio>
+            </div>
+		</main>
+		
+		<section class="time-table">
+            <div class="container">
+                
+                <div class="select-class">
+                    <h1>Classes Time-table</h1>
+                    <div class="selections">
+                        
+                        <!-- ============================= -->
+                            <div class="check-box">
+                                <input type="radio" id="normal-cb" name="class-time-table" class="normal"/>
+                                <label for="normal-cb">Normal</label>
+                            </div>
+                            <!-- ========== -->
+                            <div class="check-box">
+                                <input type="radio"  id="superman-cb" name="class-time-table"/>
+                                <label for="superman-cb">Superman</label>
+                            </div>
+                            <!-- ========== -->
+                            <div class="check-box">
+                                <input type="radio" id="hulk-cb" name="class-time-table"/>
+                                <label for="hulk-cb">Hulk</label>
+                            </div>
+                        <!-- ============================= -->
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="class-timetable">
+                    <h2>Normal</h2>
+                    <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th> 
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <td>6:00 am</td>
+                            <td>Spin Class</td>
+                            <td>Yoga</td>
+                            <td>Cardio</td>
+                            <td>Weightlifting</td>
+                            <td>Zumba</td>
+                            <td>Bootcamp</td>
+                            <td>Rest Day</td>
+                        </tr>
+                        <tr>
+                            <td>7:00 am</td>
+                            <td>Weightlifting</td>
+                            <td>Bootcamp</td>
+                            <td>Pilates</td>
+                            <td>Spin Class</td>
+                            <td>Yoga</td>
+                            <td>Cardio</td>
+                            <td>Rest Day</td>
+                        </tr>
+                        <tr>
+                            <td>8:00 am</td>
+                            <td>Zumba</td>
+                            <td>Cardio</td>
+                            <td>Spin Class</td>
+                            <td>Bootcamp</td>
+                            <td>Pilates</td>
+                            <td>Yoga</td>
+                            <td>Rest Day</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                
+                <div class="class-timetable">
+                    <h2>Superman</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th> 
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                                <th>Sunday</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <tr>
+                                <td>6:00 am</td>
+                                <td>Superman Strength</td>
+                                <td>Superman Cardio</td>
+                                <td>Superman Circuit</td>
+                                <td>Superman Flexibility</td>
+                                <td>Superman HIIT</td>
+                                <td>Rest Day</td>
+                                <td>Rest Day</td>
+                            </tr>
+                            <tr>
+                                <td>7:00 am</td>
+                                <td>Superman Flexibility</td>
+                                <td>Superman Strength</td>
+                                <td>Superman Cardio</td>
+                                <td>Superman Circuit</td>
+                                <td>Superman HIIT</td>
+                                <td>Rest Day</td>
+                                <td>Rest Day</td>
+                            </tr>
+                            <tr>
+                                <td>8:00 am</td>
+                                <td>Superman Cardio</td>
+                                <td>Superman Circuit</td>
+                                <td>Superman Flexibility</td>
+                                <td>Superman Strength</td>
+                                <td>Superman HIIT</td>
+                                <td>Rest Day</td>
+                                <td>Rest Day</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="class-timetable">
+                    <h2>Hulk</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th> 
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                                <th>Sunday</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <tr>
+                                <td>6:00 am</td>
+                                <td>Hulk Powerlifting</td>
+                                <td>Hulk Functional Training</td>
+                                <td>Hulk Plyometrics</td>
+                                <td>Hulk Core</td>
+                                <td>Hulk Stretching</td>
+                                <td>Rest Day</td>
+                                <td>Rest Day</td>
+                            </tr>
+                            <tr>
+                                <td>7:00 am</td>
+                                <td>Hulk Core</td>
+                                <td>Hulk Powerlifting</td>
+                                <td>Hulk Functional Training</td>
+                                <td>Hulk Plyometrics</td>
+                                <td>Hulk Stretching</td>
+                                <td>Rest Day</td>
+                                <td>Rest Day</td>
+                            </tr>
+                            <tr>
+                                <td>8:00 am</td>
+                                <td>Hulk Functional Training</td>
+                                <td>Hulk Plyometrics</td>
+                                <td>Hulk Core</td>
+                                <td>Hulk Powerlifting</td>
+                                <td>Hulk Stretching</td>
+                                <td>Rest Day</td>
+                                <td>Rest Day</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+		</section>
+		
+		<section class="additional-classes">
+            <h1>Additional Classes</h1>
+           
+            <div class="container">
+		        <!-- search bar -->
+		        <div class="input-group">
+                    <input type="search" class="form-control rounded search-bar" placeholder="Enter a sport" aria-label="Search" aria-describedby="search-addon" />
+                    
+                    <button type="button" class="btn btn-outline-primary search-btn" data-mdb-ripple-init>search</button>
+                </div>
+                <p class="not-found">NOT FOUND</p>
+                <!-- End search bar -->
+                <div class="add-classes">
+                    <div class="class basketball">
+                        <h5>Basketball legend</h5>
+                        <p>Shoot hoops like a pro and dominate the court with your skills!</p>
+                    </div>
+                    <div class="class football">
+                        <h5>Football Fever</h5>
+                        <p>Kick off the excitement and score goals in the game of champions!</p>
+                    </div>
+                    <div class="class tennis">
+                        <h5>Tennis Triumph</h5>
+                        <p>Serve, volley, and smash your way to victory on the tennis court!</p>
+                    </div>
+                    <div class="class golf">
+                        <h5>Golf Guru</h5>
+                        <p>Master the fairways and greens to become a golfing sensation!</p>
+                    </div>
+                    <div class="class swimming">
+                        <h5>Swimming Sensation</h5>
+                        <p>Dive into greatness and glide through the water like a champion!</p>
+                    </div>
+                    <div class="class running">
+                        <h5>Track and Field Titan</h5>
+                        <p>Run, jump, and throw your way to glory on the track and field!</p>
+                    </div>
+                    <div class="class soccer">
+                        <h5>Soccer Star</h5>
+                        <p>Control the ball, make plays, and score goals like a true soccer star!</p>
+                    </div>
+                    <div class="class rugby">
+                        <h5>Rugby Renegade</h5>
+                        <p>Crash, tackle, and sprint your way to victory on the rugby field!</p>
+                    </div>
+                    <div class="class volleyball">
+                        <h5>Volleyball Visionary</h5>
+                        <p>Set, spike, and block your opponents with precision in volleyball!</p>
+                    </div>
+                    <div class="class cricket">
+                        <h5>Cricket Champion</h5>
+                        <p>Drive, bowl, and field your way to cricketing greatness!</p>
+                    </div>
+                </div>
+                
+		    </div>
+		</section>
+		
+		<section class="join-now">
+            <h1>Join Now!</h1>
+            <div class="container">
+                <video src="../MEDIA/classes join now.mp4" alt="Gym Bar" controls autoplay loop></video>
+            </div>
+		</section>
+		
+	</body>
+</html>

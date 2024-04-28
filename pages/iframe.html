@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="eg">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iframe</title>
+        <script src="../js/events-faq.js"></script>
+        <link rel="stylesheet" href="../css/events-faq.css">
+        <style>
+            .slideshow-container {
+              overflow: hidden;
+              width: 100%;
+              position: relative;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+          
+            /* Style for each slide */
+            .slide {
+              display: flex;
+              transition: transform 0.8s ease;
+            }
+          
+            /* Style for individual images */
+            .slide img {
+              width: 100%;
+              flex-shrink: 0;
+            }
+          </style>
+          </head>
+          <body>
+          
+          <div class="slideshow-container">
+            <div class="slide">
+              <img class="iframeImg" src="../img/iframe 1.jpg" alt="Event 1">
+              <img class="iframeImg" src="../img/iframe 2.jpg" alt="Event 1">
+              <img class="iframeImg" src="../img/iframe 3.jpg" alt="Event 1">
+              <img class="iframeImg" src="../img/iframe 4.jpg" alt="Event 1">
+              <img class="iframeImg" src="../img/iframe 5.jpg" alt="Event 1">
+            </div>
+          </div>
+          
+          <script>
+            let slideIndex = 0;
+            showSlides();
+            function showSlides() {
+              const slides = document.querySelector('.slide');
+              const slideWidth = slides.clientWidth;
+
+              slideIndex++;
+              if (slideIndex >= slides.children.length) {
+                slideIndex = 0; // Start from the beginning if reached the end
+              }
+          
+              const transformValue = -slideIndex * slideWidth;
+              slides.style.transform = `translateX(${transformValue}px)`;
+          
+              setTimeout(showSlides, 4000);
+            }
+          </script>
+          
+    </body>
+</html>

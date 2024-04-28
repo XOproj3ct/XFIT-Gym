@@ -1,0 +1,360 @@
+:root {
+	--main: #ff4500;
+	--section-padding:100px
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+}
+body.dark-mode {
+	background-color: #141414;
+}
+
+/* ======================================= */
+.title {
+	height: 20vh;
+	background-image: url(../img/classes\ blur.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: -1;
+}
+.title div {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.title h1 {
+	color: var(--main);
+	background-color: white;
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	border-radius: 10px;
+}
+body.dark-mode .title h1 {
+	background-color: black;
+	color: white;
+	padding: 10px;
+}
+/* ==================== */
+main {
+	padding-bottom: var(--section-padding);
+}
+main .class-card {
+	background-color: white;
+	margin-top: -20px;
+	padding: 40px 50px;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	overflow: hidden;
+	position: relative;
+	transition: 0.3s !important;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 30px;
+}
+body.dark-mode main .class-card {
+	background-color: black;
+	color: white;
+}
+@media (max-width: 1200px) {
+	main .class-card {
+		padding: 40px 30px;
+	}
+}
+
+main .class-card:not(:first-child)::before {
+	content: "";
+	position: absolute;
+	background-color: var(--main);
+	width: 100px;
+	height: 200px;
+	top: -50px;
+	left: 0;
+	transform: skew(-50deg);
+}
+main .class-card:nth-child(2):after,
+main .class-card:nth-child(3):after {
+	font-size: 1.2rem;
+	font-weight: bold;
+	position: absolute;
+	/* background-color: var(--main); */
+	left: 40px;
+	top: 30px;
+}
+main .class-card:nth-child(2):after {
+	content: "PRO";
+}
+main .class-card:nth-child(3):after {
+	content: "ULTI";
+}
+
+main .row {
+	gap: 50px;
+}
+.audio{
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.card-head {
+	text-align: center;
+	margin-bottom: 30px;
+}
+.card-head i {
+	font-size: 3rem;
+	margin-bottom: 20px;
+	color: var(--main);
+}
+.card-body li {
+	font-size: 1.2rem;
+}
+.card-body li::marker {
+	color: var(--main);
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+.btn {
+	background-color: var(--main);
+	color: white;
+	width: fit-content;
+	margin: 0px auto;
+	transition: 0.3s;
+}
+
+main .class-card:hover {
+	transform: translateY(-20px) !important;
+	background-color: var(--main);
+	color: white;
+}
+body.dark-mode .class-card:hover {
+	background-color: #333;
+}
+
+main .class-card:hover i {
+	color: white;
+}
+body.dark-mode .class-card:hover i {
+	color: var(--main);
+}
+main .class-card:hover .btn {
+	background-color: white;
+}
+body.dark-mode .class-card:hover .btn {
+	background-color: var(--main);
+}
+main .class-card:hover a {
+	color: var(--main);
+}
+body.dark-mode .class-card:hover a {
+	color: white;
+}
+main .class-card:hover li::marker {
+	color: white;
+}
+body.dark-mode .class-card:hover li::marker {
+	color: var(--main);
+}
+main .class-card:hover:nth-child(2)::before,
+main .class-card:hover:nth-child(3)::before {
+	background-color: white;
+}
+main .class-card:hover:nth-child(2)::after,
+main .class-card:hover:nth-child(3)::after {
+	color: var(--main);
+}
+
+/* ==============TimeTables================ */
+.time-table{
+	padding-bottom: var(--section-padding);
+}
+.time-table .container {
+	text-align: center;
+}
+.time-table .container .select-class {
+	margin-bottom: 50px;
+}
+body.dark-mode .time-table .container .select-class {
+	color: white;
+}
+.time-table .container .select-class h1 {
+	color: var(--main);
+	margin-bottom: 20px !important;
+}
+.time-table .container .selections {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+}
+.check-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	font-size: 2rem;
+}
+
+input[type="radio"] {
+	width: 1.875rem;
+	height: 1.875rem;
+	accent-color: red;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: Arial, sans-serif;
+	margin-bottom: 30px;
+}
+body.dark-mode table {
+	color: white;
+	border-bottom: 1px solid var(--main);
+}
+body.dark-mode .class-timetable h2 {
+	color: var(--main);
+}
+
+th,
+td {
+	padding: 10px;
+	text-align: center;
+}
+thead {
+	text-align: center;
+	color: var(--main);
+}
+th {
+	background-color: #333;
+}
+body.dark-mode tr:nth-child(even) {
+	background-color: #333;
+}
+tbody tr:nth-child(even) {
+	background-color: #777;
+	color: white;
+}
+
+.class-timetable {
+	display: none;
+}
+
+.show-timetable {
+	display: block;
+}
+/* ===============Search and additional classes*/
+.additional-classes{
+	padding: 50px 0;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.additional-classes h1{
+	text-align: center;
+	color: var(--main);
+}
+.input-group{
+	display: flex;
+	justify-content: center;
+	width: 30%;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.add-classes{
+	padding: 40px 10px;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 1fr 1fr;
+}
+.add-classes .class{
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	padding: 20px;
+	border-radius: 10px;
+	position: relative;
+	transition: 0.3s;
+	cursor: pointer;
+}
+.add-classes .class:hover{
+	transform: rotate(-2deg);
+}
+
+.add-classes .class::before{
+	content: '';
+	position: absolute;
+	background-color: var(--main);
+	width: 10px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border-top-left-radius: inherit;
+	border-bottom-left-radius: inherit;
+}
+.add-classes .class h5{
+	color: var(--main);
+}
+
+.search-bar{
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+.search-bar:focus{
+	box-shadow: none;
+	border-color: var(--main);
+}
+
+.search-btn{
+	border: none;
+}
+.search-btn:hover{
+	background-color: #ac3104;
+}
+
+.not-found{
+	font-size: 1.5rem;
+	text-align: center;
+	display: none;
+	width: fit-content;
+	border-radius: 10px;
+	margin: 30px auto;
+	padding: 10px;
+	background-color: var(--main);
+	color: white;
+	
+}
+.show-not-found{
+	display: block;
+}
+
+
+body.dark-mode .add-classes .class p{
+	color: white;
+}
+
+/* Join now */
+.join-now {
+	padding: var(--section-padding);
+}
+.join-now h1{
+	text-align: center;
+	color: var(--main);
+	font-size: 3rem;
+}
+
+.join-now .container{
+	display: flex;
+	justify-content: center;
+}
+video{
+	width: 90%;
+}
