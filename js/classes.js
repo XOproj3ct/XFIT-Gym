@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded',()=>{
+
     const normal = document.getElementById("normal-cb");
     const superman = document.getElementById('superman-cb');
     const hulk = document.getElementById('hulk-cb');
