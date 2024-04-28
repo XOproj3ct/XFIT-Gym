@@ -1,9 +1,10 @@
-const normal = document.getElementById("normal-cb");
-const superman = document.getElementById('superman-cb');
-const hulk = document.getElementById('hulk-cb');
-const timeTables = document.querySelectorAll('.class-timetable')
-
-function removeAll(){
+document.addEventListener('DOMContentLoaded',()=>{
+    const normal = document.getElementById("normal-cb");
+    const superman = document.getElementById('superman-cb');
+    const hulk = document.getElementById('hulk-cb');
+    const timeTables = document.querySelectorAll('.class-timetable')
+    
+    function removeAll(){
     timeTables.forEach((e)=>{
         e.classList.remove('show-timetable');
     });
@@ -61,7 +62,7 @@ searchBtn.addEventListener('click',()=>{
     
     // == logic == 
 	let inputtedSport = searchBar.value.toLowerCase().trim();
-	    // if [x btn] is pressed then [searchBtn]
+    // if [x btn] is pressed then [searchBtn]
 	if(inputtedSport === ''){
         additionalClasses.forEach(e=>{
             e.style.display = 'block';
@@ -72,7 +73,7 @@ searchBtn.addEventListener('click',()=>{
     // Search 
     let found = 0;
 	additionalClasses.forEach((targetClass) =>{
-		if(targetClass.classList[1].includes(inputtedSport)){
+        if(targetClass.classList[1].includes(inputtedSport)){
             targetClass.style.display = 'block';
 		    found = 1;
 		}else{
@@ -84,4 +85,5 @@ searchBtn.addEventListener('click',()=>{
         notFoundText.classList.add("show-not-found")
     }
     
+})
 })
