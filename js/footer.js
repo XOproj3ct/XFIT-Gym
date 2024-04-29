@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     </div>	
     </div>
     </footer>`
-    document.body.innerHTML += footer
+    document.getElementById("footer").innerHTML += footer
     
     document.head.innerHTML += `<link rel="stylesheet" href="../css/footer.css">`
     

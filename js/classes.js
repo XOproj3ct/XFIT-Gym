@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded',()=>{
-
     const normal = document.getElementById("normal-cb");
     const superman = document.getElementById('superman-cb');
     const hulk = document.getElementById('hulk-cb');
@@ -34,29 +32,36 @@ const notFoundText = document.querySelector('.not-found')
 function removeNotFound(){
     notFoundText.classList.remove("show-not-found")
 }
+// this send the input to the localstorage
+function searchTextToLocalStorage(){
+    window.localStorage.setItem("search-sport",searchBar.value)
+}
+// get the inputted value from localstorage and search with it
+function getSearchFromLocalStorage(){
+    searchBar.value = window.localStorage.getItem("search-sport")
+    searchBtn.click()
+}
 
 
-// If the user deliberately deleted the input
+// Search with keyboard
 searchBar.addEventListener('keyup',(e)=>{
-    // If not found was displayed remove it
-    
-    // logic
+    // If the user deliberately deleted the input
     if(e.target.value == ''){
+        // If not found was displayed remove it
         removeNotFound()
         additionalClasses.forEach(e=>{
             e.style.display = 'block';
         })
     }
-})
-
-// If Enter btn is pressed -> search
-searchBar.addEventListener('keydown',(e)=>{
+    
+    // If Enter btn is pressed -> search
     if(e.key == 'Enter'){
         searchBtn.click();
     }
+    searchTextToLocalStorage();
 })
 
-// Search button click event
+// Search with "search button"
 searchBtn.addEventListener('click',()=>{
     // If not found was displayed remove it
     removeNotFound()
@@ -87,4 +92,5 @@ searchBtn.addEventListener('click',()=>{
     }
     
 })
-})
+
+getSearchFromLocalStorage()
