@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded',()=>{
         document.getElementById("myBar").style.width = `${scrolled}%`;
     }
     
-    
-    
-    
-    
-    
     // import header HTML CSS  
     /*
     ============================== Read before use ==============================
@@ -25,16 +20,8 @@ header.innerHTML = `<div class="container">
 <div class="left-header">
     <a href="index.html" alt="logo"><h1>XFIT</h1></a>
     <div>
-        <input
-            type="checkbox"
-            class="checkbox"
-            id="checkbox"
-        />
-        <label for="checkbox" class="checkbox-label">
-            <i class="fas fa-moon"></i>
-            <i class="fas fa-sun"></i>
-            <span class="ball"></span>
-        </label>
+        <i class="fa-solid fa-sun hide-moon-sun"></i>
+        <i class="fa-solid fa-moon"></i>
     </div>
     <a class="donation" href="donation.html">
         <div>Donation</div>
@@ -201,9 +188,33 @@ document.head.innerHTML += headerCss;
 
 
 // Dark Mode Functions
-let btn = document.querySelector('.checkbox-label')
+let sun = document.querySelector('.fa-sun')
+let moon = document.querySelector('.fa-moon')
+const body = document.querySelector('body');
 
-btn.addEventListener('click' , function() {
-    document.querySelector('body').classList.toggle("dark-mode")
+function dark_light(state){
+    sun.classList.toggle("hide-moon-sun")
+    moon.classList.toggle("hide-moon-sun")
+    body.classList.toggle("dark-mode")
+    window.localStorage.setItem("dark",state)
+    
+}
+
+// checks local storage on load
+let dark = window.localStorage.getItem("dark")
+if(dark == "on"){
+    dark_light("on")
+}
+// when sun
+sun.addEventListener('click',()=>{
+    dark_light("off");
+    
 })
+
+// when moon
+moon.addEventListener('click',()=>{
+    dark_light("on");
+})
+
+
 })
