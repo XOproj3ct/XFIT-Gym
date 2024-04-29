@@ -13,6 +13,17 @@ body{
     border-style: solid;
 }
 
+.dark-mode {
+    background-color: rgb(19, 18, 18);
+    color: white;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+
 /* root values to make sure of the base colors and at the same time to make the selection look cool*/
 :root{
     --container-color: #1a1e21;
@@ -51,7 +62,7 @@ a{
 .home{
     width: 100%;
     min-height: 440px;
-    background: url("../img/Banner.jpg");
+    background: url("Banner.jpg");
     position: relative;
     background-position: 50%;
     background-size: cover;
@@ -81,26 +92,18 @@ a{
     max-width: 50%;
     width: 50%;
     text-align: left;
-    padding-right: 40px;
+    display:flexbox;
+    padding-left: 40px;
 }
 
 .titleText{
     font-weight: 600;
-    color: #111;
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
 .title-text{
-    color: #111;
     font-size: 1em;
-}
-
-.about .imgBx{
-    position: relative;
-    min-width: 50%;
-    width: 50%;
-    min-height: 500px;
 }
 
 .btn2{
@@ -150,7 +153,6 @@ a{
 }
 
 .post-box{
-    background: var(--bg-color);
     box-shadow: 0 4px 14px hsla(0, 96%, 30%, 0.247);
     padding: 15px;
     border-radius: 0.5rem;
@@ -174,7 +176,7 @@ a{
 .post-title{
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--text-color);
+    color:var(--second-color);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -219,12 +221,3 @@ a{
     font-weight: 500;
 }
 
-body.dark-mode {
-    background-color: #111;
-}
-body.dark-mode .contentBx,
-body.dark-mode .contentBx .titleText,
-body.dark-mode .contentBx .title-text,
-body.dark-mode .filter-item{
-    color: white;
-}
