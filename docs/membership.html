@@ -7,20 +7,18 @@
     <title>XFIT || Membership </title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/membership.css">
-    <!-- Font awesome -->
+    <!-- font-awesome -->
     <link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-			integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
-	<!--Header/Footer scripts-->
-	<script src="../js/footer.js" defer></script>
-    <script src="../js/header.js" defer></script>
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+/>
 </head>
 <body>
     <header id="header"></header>
+    
     <section class="home" id="home">
         <div class="home-text container">
             <h2 class="home-title">XFIT GYM Plans</h2>
@@ -181,36 +179,41 @@
             <div class="main-form">
                 <form action="#" method="get"> 
                     <div>
-                        <span>Your full name ?</span>
-                        <input type="text" name="name" id="name" placeholder="Name | txt |" required>
+                        <span>Your full name:</span>
+                        <input style="color: #910a0a;" type="text" name="name" id="name" placeholder="Name | txt |" required>
                     </div>
                     <div>
-                        <span>Your email address ?</span>
-                        <input type="email" name="name" id="name" placeholder="e-mail | Mail |" required> 
+                        <span>Your email address:</span>
+                        <input style="color: #910a0a;" type="email" name="name" id="name" placeholder="e-mail | Mail |" required> 
                     </div>
                     <div>
 
-                        <span>Which plan?</span>
-                        <select name="people" id="people" required>
+                        <span>Which Plan?</span>
+                        <select style="color: #910a0a;" name="people" id="people" required>
                             <option value=""> | Choose a plan | </option>
-                            <option value="1"> Silver Membership </option>
+                            <option value="1">Silver Membership </option>
                             <option value="2">Golden Membership </option>
                             <option value="3">Platinum Membership </option>
                         </select>
 
                         <!-- <---this is the select option--->
                     </div>
+                    
                     <div>
-                        <span>What time ?</span>
-                        <input type="text" name="time" id="time" placeholder="Time" required>
+                    <span>Gender</span>
+                    <select style="color: #910a0a;" name="people" id="people" required>
+                        <option value=""> | Gender | </option>
+                        <option value="1"> Male </option>
+                        <option value="2"> Female </option>
+                    </select>
                     </div>
                     <div>
-                        <span>What is the date ?</span>
-                        <input type="date" name="date" id="date" placeholder="date" required>
+                        <span>Starting Date</span>
+                        <input style="color: #910a0a;" type="date" name="date" id="date" placeholder="date" required>
                     </div>
                     <div>
-                        <span>Your phone number ?</span>
-                        <input type="number" name="number" id="number" placeholder="Write your number here..." required>
+                        <span>Phone number</span>
+                        <input style="color: #910a0a;" type="number" name="number" id="number" placeholder="Write your number here..." required>
                     </div>
                     <div id="submit">
                         <input type="submit" value="SUBMIT" id="submit">
@@ -221,24 +224,17 @@
             </div>
         </div>
     </section>
-    
-    <h3  style="margin-left: 20px;" id="DarkModetext">Dark Mode is OFF</h3>
-    <button style="margin-left: 20px;" onclick="darkMode()">Darkmode</button>
-    <button style="margin-left: 20px;"onclick="lightMode()">LightMode</button>
-    <script>
-        function darkMode() {
-            let element = document.body;
-            let content = document.getElementById("DarkModetext");
-            element.className = "dark-mode";
-            content.innerText = "Dark Mode is ON";
-        }
-        function lightMode() {
-            let element = document.body;
-            let content = document.getElementById("DarkModetext");
-            element.className = "light-mode";
-            content.innerText = "Dark Mode is OFF";
-        }
-    </script>
-    <br></br>
-    <footer id="footer"></footer>
+
+    <div class="scontainer">
+        <h1>Pick your trainer</h1>
+        <input type="text" id="searchInput" placeholder="|Name| - |Age| - |City| - |Number|">
+        <table id="searchResults"></table>
+      </div>
+
+      
+      <br></br>
+      <footer id="footer"></footer>
+      <script src="../js/membership.js"></script>
+      <script src="../js/header.js"></script>
+      <script src="../js/footer.js"></script>
 </body>

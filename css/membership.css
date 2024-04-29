@@ -48,6 +48,24 @@
     border-radius: 5px;;
     transition: 0.5s;
 }
+.btn2-ed{
+    position: relative;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 5px;
+    background: #fff;
+    border: .8px solid #910a0a;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;;
+    transition: all 0.3s;
+}
+
+.btn2-ed:hover{
+    background-color: var(--second-color);
+    border: none;
+    color: #fff;   
+}
 
 .btn2:hover{
     background-color: var(--second-color);
@@ -307,4 +325,51 @@ body{
     color: #000000 !important;
 }
 
+/* Search Box */
+.scontainer {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #5e0505;
+    border-radius: 5px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #5e0505;
+    border-radius: 5px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  input[type="text"]::placeholder {
+    color: #910a0a;
+}
 
+input[type="email"]::placeholder {
+    color: #910a0a;
+}
+
+input[type="date"]::placeholder {
+    color: #910a0a;
+}
+
+input[type="number"]::placeholder {
+    color: #910a0a;
+}
+  table, th, td {
+    border: 1px solid #910a0a;
+    border-radius: 5px;
+    padding: 16px;
+  }
+  

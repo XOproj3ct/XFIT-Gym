@@ -218,3 +218,13 @@ a{
     font-size: .8rem;
     font-weight: 500;
 }
+
+body.dark-mode {
+    background-color: #111;
+}
+body.dark-mode .contentBx,
+body.dark-mode .contentBx .titleText,
+body.dark-mode .contentBx .title-text,
+body.dark-mode .filter-item{
+    color: white;
+}
