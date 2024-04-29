@@ -99,7 +99,7 @@ $(function() {
 
     $('#loginBtn').click(function() {
         // TODO: Change the URL
-        window.location.href = 'login.html';
+        window.location.href = 'signIn.html';
     });
     
     $(openShopping).click(function() {
