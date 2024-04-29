@@ -167,10 +167,7 @@ main .buttons {
 	color: black;
 	box-shadow: 0 0 35px white !important;
 }
-main audio{
-	
-	background-color:var(--main);
-}
+
 @media (max-width: 992px) {
 	.container video {
 		display: none;
