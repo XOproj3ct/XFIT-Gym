@@ -373,3 +373,9 @@ input[type="number"]::placeholder {
     padding: 16px;
   }
   
+
+
+/* header container */
+header .container{
+    max-width: 1200px !important;
+}

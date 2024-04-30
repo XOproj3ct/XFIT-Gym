@@ -49,6 +49,21 @@ header .left-header {
 	justify-content: center;
 	align-items: center;
 }
+header ul .sign-up-header,
+header ul .sign-in-header{
+	padding: 8px 10px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+header ul .sign-up-header{
+	background-color: var(--main);
+	color: white;
+}
+header ul .sign-in-header{
+	background-color: white;
+	color: black !important;
+}
+
 body.dark-mode header,
 body.dark-mode .nav-serv-list
 {

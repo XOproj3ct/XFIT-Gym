@@ -1,22 +1,27 @@
-document.addEventListener('DOMContentLoaded',()=>{
-    const mainColor = "#ff4500"
-    // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {myFunction()};
-    function myFunction() {
-        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        let scrolled = (winScroll / height) * 100;
-        document.getElementById("myBar").style.width = `${scrolled}%`;
-    }
-    
-    // import header HTML CSS  
-    /*
+document.addEventListener("DOMContentLoaded", () => {
+	const mainColor = "#ff4500";
+	// When the user scrolls the page, execute myFunction
+	window.onscroll = function () {
+		myFunction();
+	};
+	function myFunction() {
+		let winScroll =
+			document.body.scrollTop || document.documentElement.scrollTop;
+		let height =
+			document.documentElement.scrollHeight -
+			document.documentElement.clientHeight;
+		let scrolled = (winScroll / height) * 100;
+		document.getElementById("myBar").style.width = `${scrolled}%`;
+	}
+
+	// import header HTML CSS
+	/*
     ============================== Read before use ==============================
     --> You need to add <header id="header"></header> in your html file
     */
 
-const header = document.getElementById('header')
-header.innerHTML = `<div class="container">
+	const header = document.getElementById("header");
+	header.innerHTML = `<div class="container">
 <div class="left-header">
     <a href="index.html" alt="logo"><h1>XFIT</h1></a>
     <div>
@@ -27,6 +32,7 @@ header.innerHTML = `<div class="container">
         <div>Donation</div>
         <div class="smile"><i class="fa-solid fa-heart" style="color:red"></i></div>
     </a>
+    
 </div>
 
 <div class="nav-links">
@@ -121,7 +127,14 @@ header.innerHTML = `<div class="container">
         <li >
             <a href="FAQ.html" id="sruvey-link">FAQ</a>
         </li>
+        <li>
+		<a class="sign-up-header" href=" signUp.html">Sign Up</a>
+	    </li>
+        <li>
+		<a class="sign-in-header" href=" signIn.html">Sign in</a>
+	    </li>
     </ul>
+    
 </div>
 </div>
 
@@ -129,92 +142,82 @@ header.innerHTML = `<div class="container">
 <div class="progress-container">
     <div class="progress-bar" id="myBar"></div>
 </div>
-</div>`
-// services 
-const servLink = document.querySelector('.serv-link');
-const servList = document.querySelector('.nav-serv-list');
+</div>`;
+	// services
+	const servLink = document.querySelector(".serv-link");
+	const servList = document.querySelector(".nav-serv-list");
 
-servLink.addEventListener('click', ()=>{
-    servList.classList.toggle('show-serv-links')
-    servLink.classList.toggle('active-serv-link')
-})
+	servLink.addEventListener("click", () => {
+		servList.classList.toggle("show-serv-links");
+		servLink.classList.toggle("active-serv-link");
+	});
 
-// header mobile version
-const links= document.querySelector('.links');
-const bars = document.querySelector('header .bars')
-const close = document.querySelector('header .x')
+	// header mobile version
+	const links = document.querySelector(".links");
+	const bars = document.querySelector("header .bars");
+	const close = document.querySelector("header .x");
 
-bars.addEventListener('click',()=>{
-    bars.classList.toggle('hide-bars-x')
-    close.classList.toggle('hide-bars-x')
-    links.classList.toggle('show-links')
-})
-close.addEventListener('click',()=>{
-    close.classList.toggle('hide-bars-x')
-    bars.classList.toggle('hide-bars-x')
-    links.classList.toggle('show-links')
-})
+	bars.addEventListener("click", () => {
+		bars.classList.toggle("hide-bars-x");
+		close.classList.toggle("hide-bars-x");
+		links.classList.toggle("show-links");
+	});
+	close.addEventListener("click", () => {
+		close.classList.toggle("hide-bars-x");
+		bars.classList.toggle("hide-bars-x");
+		links.classList.toggle("show-links");
+	});
 
+	// ====== coloring nav target
+	const url = window.location.href;
 
-// ====== coloring nav target
-const url = window.location.href;
+	// spectial case for [Services]
+	if (window.location.href.includes("classes.html")) {
+		servLink.classList.toggle("active");
+	}
 
-// spectial case for [Services] 
-if(window.location.href.includes('classes.html')){
-    servLink.classList.toggle('active');
-}
+	// other cases
 
-// other cases
+	const allLinks = document.querySelectorAll("header li a");
+	const linksWithId = []; // every id is [the name of the page-link] ex: home-link, services-link ...etc
+	for (let i = 0; i < allLinks.length; i++) {
+		if (allLinks[i].hasAttribute("id")) linksWithId.push(allLinks[i]);
+	}
 
-const allLinks = document.querySelectorAll('header li a')
-const linksWithId = [] // every id is [the name of the page-link] ex: home-link, services-link ...etc
-for(let i = 0; i < allLinks.length; i++){
-    if(allLinks[i].hasAttribute('id'))
-        linksWithId.push(allLinks[i])
-}
+	linksWithId.map((e) => {
+		if (url.includes(e.id.split("-")[0])) {
+			e.style.color = mainColor;
+		}
+	});
 
-linksWithId.map(e=>{
-    if(url.includes(e.id.split('-')[0])){
-        e.style.color = mainColor;
-    }
-})
+	//  ==== CSS
+	const headerCss = `<link rel="stylesheet" href="../css/header.css">`;
+	document.head.innerHTML += headerCss;
 
+	// Dark Mode Functions
+	let sun = document.querySelector(".fa-sun");
+	let moon = document.querySelector(".fa-moon");
+	const body = document.querySelector("body");
 
+	function dark_light(state) {
+		sun.classList.toggle("hide-moon-sun");
+		moon.classList.toggle("hide-moon-sun");
+		body.classList.toggle("dark-mode");
+		window.localStorage.setItem("dark", state);
+	}
 
-//  ==== CSS
-const headerCss = `<link rel="stylesheet" href="../css/header.css">`
-document.head.innerHTML += headerCss;
+	// checks local storage on load
+	let dark = window.localStorage.getItem("dark");
+	if (dark == "on") {
+		dark_light("on");
+	}
+	// when sun
+	sun.addEventListener("click", () => {
+		dark_light("off");
+	});
 
-
-
-// Dark Mode Functions
-let sun = document.querySelector('.fa-sun')
-let moon = document.querySelector('.fa-moon')
-const body = document.querySelector('body');
-
-function dark_light(state){
-    sun.classList.toggle("hide-moon-sun")
-    moon.classList.toggle("hide-moon-sun")
-    body.classList.toggle("dark-mode")
-    window.localStorage.setItem("dark",state)
-    
-}
-
-// checks local storage on load
-let dark = window.localStorage.getItem("dark")
-if(dark == "on"){
-    dark_light("on")
-}
-// when sun
-sun.addEventListener('click',()=>{
-    dark_light("off");
-    
-})
-
-// when moon
-moon.addEventListener('click',()=>{
-    dark_light("on");
-})
-
-
-})
+	// when moon
+	moon.addEventListener("click", () => {
+		dark_light("on");
+	});
+});

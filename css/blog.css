@@ -221,3 +221,8 @@ a{
     font-weight: 500;
 }
 
+
+/* header container */
+header .container{
+    max-width: 1200px !important;
+}
