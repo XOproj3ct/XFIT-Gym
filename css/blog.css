@@ -62,7 +62,7 @@ a{
 .home{
     width: 100%;
     min-height: 440px;
-    background: url("Banner.jpg");
+    background: url("../img/Banner.jpg");
     position: relative;
     background-position: 50%;
     background-size: cover;
